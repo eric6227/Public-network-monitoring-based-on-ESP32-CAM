@@ -1,5 +1,11 @@
 # ESP32-CAM に基づくパブリックネットワーク監視
 
+> **选择你的语言/Choose your language/言語を選択してください/Choisissez votre langue**:
+> - [中文](README.md)
+> - [English](README-EN.md)
+> - 日本語(今)
+> - [Français](README-FR.md)
+
 > **注意**: このドキュメントは機械翻訳されています。元の中国語版は [README.md](README.md) を参照してください。
 
 ESP32-CAM に基づくパブリックネットワーク監視、長距離リモートコントロール車両に適しています。

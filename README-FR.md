@@ -1,5 +1,11 @@
 # Surveillance de réseau public basée sur ESP32-CAM
 
+> **选择你的语言/Choose your language/言語を選択してください/Choisissez votre langue**:
+> - [中文](README.md)
+> - [English](README-EN.md)
+> - [日本語](README-JP.md)
+> - Français(maintenant)
+
 > **Remarque** : Ce document est traduit automatiquement. Pour la version originale en chinois, consultez [README.md](README.md).
 
 Surveillance de réseau public basée sur ESP32-CAM, adaptée aux véhicules télécommandés à longue distance.

@@ -1,5 +1,11 @@
 # Public Network Monitoring Based on ESP32-CAM
 
+> **选择你的语言/Choose your language/言語を選択してください/Choisissez votre langue**:
+> - [中文](README.md)
+> - English(now)
+> - [日本語](README-JP.md)
+> - [Français](README-FR.md)
+
 > **Note**: This document is machine-translated. For the original Chinese version, see [README.md](README.md).
 
 Public network monitoring based on ESP32-CAM, suitable for long-distance remote control vehicles.
