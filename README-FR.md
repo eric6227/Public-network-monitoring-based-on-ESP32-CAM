@@ -40,7 +40,7 @@ Ce projet est basé sur le CameraWebServer d'Espressif Systems et met en œuvre 
 2. **Modifier le code selon votre situation et les commentaires**
    - Décommentez le modèle de votre carte de développement dans le fichier [board_config.h](board_config.h). Assurez-vous que les paramètres sont corrects pour éviter d'endommager la carte.
    - La ligne 97 définit la résolution, par défaut QVGA (320×240).
-   - La ligne 151 définit le taux de rafraîchissement. Calcul : `1000 / valeur = FPS`. Par exemple, si réglé sur 33 (par défaut), cela correspond à environ 30 FPS.
+   - La ligne 155 définit le taux de rafraîchissement. Calcul : `1000 / valeur = FPS`. Par exemple, si réglé sur 33 (par défaut), cela correspond à environ 30 FPS.
      - En utilisant 320x240 à 30fps, la consommation de bande passante du serveur est d'environ 1,1mbps en descendant et 1,8mbps en montant.
 
 3. **Compiler et téléverser**

@@ -1,14 +1,14 @@
-//代码由 AI 辅助编写，基于 esp32cam 开发板自带的CameraWebServer示例程序开发
-
 #include <Arduino.h>
 #include "esp_camera.h"
+#include <driver/gpio.h>
 #include <WiFi.h>
 #include <WiFiUdp.h>  
 
 // ========== 你的摄像头型号头文件 ==========
 #include "board_config.h"
 //在board_config.h文件中取消注释你的esp32开发板型号，默认AI Thinker。选择错误可能损坏开发板
-//分辨率在 line 97 修改。当前 QVGA 320×240
+//分辨率在 line 97 修改。默认 QVGA 320×240 帧率在 line 155 修改
+
 // ========== WiFi 信息 ==========
 const char *ssid = "你的WiFi的ssid";
 const char *password = "你的WiFi密码";
@@ -131,6 +131,10 @@ void setup() {
   }
   Serial.println("\nWiFi已连接，IP: " + WiFi.localIP().toString());
 
+  gpio_reset_pin(GPIO_NUM_4);
+  gpio_set_direction(GPIO_NUM_4, GPIO_MODE_OUTPUT);
+  gpio_set_level(GPIO_NUM_4, 0);
+  
   Serial.println("系统初始化完成，开始 UDP 推流...");
 }
 

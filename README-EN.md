@@ -38,7 +38,7 @@ This project is based on Espressif Systems' CameraWebServer and implements publi
 2. **Modify the code according to your situation and comments**
    - Uncomment your development board model in the [board_config.h](board_config.h) file. Ensure the settings are correct to avoid damaging the board.
    - Line 97 sets the resolution, default is QVGA (320×240).
-   - Line 151 sets the frame rate. Calculation: `1000 / value = FPS`. For example, if set to 33 (default), it is approximately 30 FPS.
+   - Line 155 sets the frame rate. Calculation: `1000 / value = FPS`. For example, if set to 33 (default), it is approximately 30 FPS.
      - Using 320x240 at 30fps consumes about 1.1mbps downstream and 1.8mbps upstream bandwidth on the server.
 
 3. **Compile and upload**
