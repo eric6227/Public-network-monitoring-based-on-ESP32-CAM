@@ -8,6 +8,9 @@
 
 基于 ESP32-CAM 的公网监控，可用于远距离遥控车
 
+## 配件
+- [可以3D打印的配件](https://github.com/eric6227/3D-printing-accessories-for-ESP32-CAM)
+
 
 ## 简介
 
