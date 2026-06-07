@@ -49,6 +49,7 @@
 
 ### 服务端配置
 
+#### 方法1：传统部署方式
 1. **将 `server.py` 文件上传到服务器**
 
 2. **安装 aiohttp，启动服务端**
@@ -118,6 +119,54 @@
        ```
 
 3. **开放端口 8888 和 8081**
+
+#### 方法2：Docker 部署方式
+1. **使用 Docker Compose 启动**
+   - 创建 `docker-compose.yml` 文件：
+     ```yaml
+     version: '3.8'
+     
+     services:
+       esp32-cam-server:
+         image: ghcr.io/eric6227/pnm-esp32cam:latest
+         container_name: esp32-cam-server
+         ports:
+           - "8888:8888/udp"
+           - "8081:8081/tcp"
+         volumes:
+           - ./logs:/app/logs
+         restart: unless-stopped
+         environment:
+           - PYTHONUNBUFFERED=1
+     ```
+   - 启动服务：
+     ```bash
+     docker-compose up -d
+     ```
+   - 查看日志：
+     ```bash
+     docker-compose logs -f
+     ```
+   - 停止服务：
+     ```bash
+     docker-compose down
+     ```
+
+2. **手动 Docker 部署**
+   - 拉取镜像：
+     ```bash
+     docker pull ghcr.io/eric6227/pnm-esp32cam:latest
+     ```
+   - 启动容器：
+     ```bash
+     docker run -d \
+       --name esp32-cam-server \
+       -p 8888:8888/udp \
+       -p 8081:8081/tcp \
+       -v ./logs:/app/logs \
+       --restart unless-stopped \
+       ghcr.io/eric6227/pnm-esp32cam:latest
+     ```
 
 ---
 

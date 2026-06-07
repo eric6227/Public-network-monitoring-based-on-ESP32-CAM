@@ -49,6 +49,7 @@ Ce projet est basé sur le CameraWebServer d'Espressif Systems et met en œuvre 
 
 ### Configuration du serveur
 
+#### Méthode 1 : Déploiement traditionnel
 1. **Téléverser le fichier `server.py` sur le serveur**
 
 2. **Installer aiohttp et démarrer le serveur**
@@ -118,6 +119,54 @@ Ce projet est basé sur le CameraWebServer d'Espressif Systems et met en œuvre 
        ```
 
 3. **Ouvrir les ports 8888 et 8081**
+
+#### Méthode 2 : Déploiement avec Docker
+1. **Utiliser Docker Compose**
+   - Créez un fichier `docker-compose.yml` :
+     ```yaml
+     version: '3.8'
+     
+     services:
+       esp32-cam-server:
+         image: ghcr.io/eric6227/pnm-esp32cam:latest
+         container_name: esp32-cam-server
+         ports:
+           - "8888:8888/udp"
+           - "8081:8081/tcp"
+         volumes:
+           - ./logs:/app/logs
+         restart: unless-stopped
+         environment:
+           - PYTHONUNBUFFERED=1
+     ```
+   - Démarrez le service :
+     ```bash
+     docker-compose up -d
+     ```
+   - Voir les logs :
+     ```bash
+     docker-compose logs -f
+     ```
+   - Arrêter le service :
+     ```bash
+     docker-compose down
+     ```
+
+2. **Déploiement Docker manuel**
+   - Téléchargez l'image :
+     ```bash
+     docker pull ghcr.io/eric6227/pnm-esp32cam:latest
+     ```
+   - Démarrez le conteneur :
+     ```bash
+     docker run -d \
+       --name esp32-cam-server \
+       -p 8888:8888/udp \
+       -p 8081:8081/tcp \
+       -v ./logs:/app/logs \
+       --restart unless-stopped \
+       ghcr.io/eric6227/pnm-esp32cam:latest
+     ```
 
 ---
 

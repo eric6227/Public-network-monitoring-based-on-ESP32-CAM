@@ -47,6 +47,7 @@ This project is based on Espressif Systems' CameraWebServer and implements publi
 
 ### Server Configuration
 
+#### Method 1: Traditional Deployment
 1. **Upload the `server.py` file to the server**
 
 2. **Install aiohttp and start the server**
@@ -116,6 +117,54 @@ This project is based on Espressif Systems' CameraWebServer and implements publi
        ```
 
 3. **Open ports 8888 and 8081**
+
+#### Method 2: Docker Deployment
+1. **Using Docker Compose**
+   - Create a `docker-compose.yml` file:
+     ```yaml
+     version: '3.8'
+     
+     services:
+       esp32-cam-server:
+         image: ghcr.io/eric6227/pnm-esp32cam:latest
+         container_name: esp32-cam-server
+         ports:
+           - "8888:8888/udp"
+           - "8081:8081/tcp"
+         volumes:
+           - ./logs:/app/logs
+         restart: unless-stopped
+         environment:
+           - PYTHONUNBUFFERED=1
+     ```
+   - Start the service:
+     ```bash
+     docker-compose up -d
+     ```
+   - View logs:
+     ```bash
+     docker-compose logs -f
+     ```
+   - Stop the service:
+     ```bash
+     docker-compose down
+     ```
+
+2. **Manual Docker Deployment**
+   - Pull the image:
+     ```bash
+     docker pull ghcr.io/eric6227/pnm-esp32cam:latest
+     ```
+   - Start the container:
+     ```bash
+     docker run -d \
+       --name esp32-cam-server \
+       -p 8888:8888/udp \
+       -p 8081:8081/tcp \
+       -v ./logs:/app/logs \
+       --restart unless-stopped \
+       ghcr.io/eric6227/pnm-esp32cam:latest
+     ```
 
 ---
 
