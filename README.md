@@ -25,7 +25,7 @@
 ## 许可证
 
 - 本项目整体采用 [MIT License](LICENSE)
-- [app_httpd.cpp](app_httpd.cpp) 文件来源于 Espressif Systems，采用 [Apache License 2.0](LICENSE-APACHE-2.0)
+- [app_httpd.cpp](./esp32/app_httpd.cpp) 文件来源于 Espressif Systems，采用 [Apache License 2.0](./esp32/LICENSE-APACHE-2.0)
 
 ---
 

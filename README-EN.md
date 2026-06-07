@@ -23,7 +23,7 @@ This project is based on Espressif Systems' CameraWebServer and implements publi
 ## License
 
 - The project as a whole adopts the [MIT License](LICENSE).
-- The file [app_httpd.cpp](app_httpd.cpp) originates from Espressif Systems and adopts the [Apache License 2.0](LICENSE-APACHE-2.0).
+- The file [app_httpd.cpp](./esp32/app_httpd.cpp) originates from Espressif Systems and adopts the [Apache License 2.0](./esp32/LICENSE-APACHE-2.0).
 
 ---
 

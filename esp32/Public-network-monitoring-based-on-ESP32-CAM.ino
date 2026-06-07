@@ -1,11 +1,11 @@
 #include <Arduino.h>
+#include "board_config.h"
 #include "esp_camera.h"
 #include <driver/gpio.h>
 #include <WiFi.h>
 #include <WiFiUdp.h>  
 
 // ========== 你的摄像头型号头文件 ==========
-#include "board_config.h"
 //在board_config.h文件中取消注释你的esp32开发板型号，默认AI Thinker。选择错误可能损坏开发板
 //分辨率在 line 97 修改。默认 QVGA 320×240 帧率在 line 155 修改
 

@@ -25,7 +25,7 @@ Ce projet est basé sur le CameraWebServer d'Espressif Systems et met en œuvre 
 ## Licence
 
 - Le projet dans son ensemble adopte la [Licence MIT](LICENSE).
-- Le fichier [app_httpd.cpp](app_httpd.cpp) provient d'Espressif Systems et adopte la [Licence Apache 2.0](LICENSE-APACHE-2.0).
+- Le fichier [app_httpd.cpp](./esp32/app_httpd.cpp) provient d'Espressif Systems et adopte la [Licence Apache 2.0](./esp32/LICENSE-APACHE-2.0).
 
 ---
 
